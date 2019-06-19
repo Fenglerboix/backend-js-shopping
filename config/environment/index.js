@@ -1,6 +1,6 @@
 /**
- * Default specific configuration
- * @author: Cristian Moreno Zulauaga <khriztianmoreno@gmail.com>
+ * Main application routes
+ * @author: Julian Herrera Giraldo <julitom25@gmail.com>
  */
 
 const all = {

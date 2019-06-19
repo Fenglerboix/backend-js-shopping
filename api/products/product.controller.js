@@ -2,7 +2,8 @@
  * Using Rails-like standard naming convention for endpoints.
  * GET     /api/products           ->  index
  * GET     /api/products/:id       ->  show
- * POSG    /api/products           ->  create
+ * POST    /api/products           ->  create
+ * PATCH   /api/products           ->  update send it withot :
  */
 
 const Product = require('./product.model');
@@ -47,6 +48,15 @@ function create(req, res) {
         .catch(handleError(res));
 }
 
+// Create product
+function update(req, res) {
+    const id = req.params.id;
+    const updateObject = req.body;
+    return Product.updateOne({ _id: id }, { $set: updateObject }).exec()
+        .then(respondWithResult(res))
+        .catch(handleError(res));
+}
+
 // Gets a single product from the DB
 function show(req, res) {
     return Product.findById(req.params.id).exec()
@@ -59,4 +69,5 @@ module.exports = {
     create,
     show,
     index,
+    update
 };

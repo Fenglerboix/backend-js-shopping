@@ -1,12 +1,12 @@
 /**
  * Main application routes
- * @author: Cristian Moreno Zuluaga <khriztianmoreno@gmail.com>
+ * @author: Julian Herrera Giraldo <julitom25@gmail.com>
  */
 
 // Import Endpoints
 const helloWorld = require('./api/helloworld');
 // New Line
-const product = require('./api/product');
+const product = require('./api/products');
 
 module.exports = (app) => {
     app.use('/api/helloworld', helloWorld);
