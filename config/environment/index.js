@@ -1,6 +1,6 @@
 /**
- * Main application routes
- * @author: Julian Herrera Giraldo <julitom25@gmail.com>
+ * Auth configuration
+ * @author: Cristian Moreno Zulauaga <khriztianmoreno@gmail.com>
  */
 
 const all = {
@@ -23,7 +23,7 @@ const all = {
     // MongoDB connection options
     mongo: {
         uri: process.env.MONGODB_URI || 'mongodb://fenglerboix:Developer123.@cluster0-shard-00-00-fuuxd.mongodb.net:27017,cluster0-shard-00-01-fuuxd.mongodb.net:27017,cluster0-shard-00-02-fuuxd.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority',
-        db: 'workshop-fullstack-js', //para cuando se usa BD
+        db: 'workshop-fullstack-js',
     },
 };
 

@@ -1,6 +1,6 @@
 /**
- * Main application routes
- * @author: Julian Herrera Giraldo <julitom25@gmail.com>
+ * Auth configuration
+ * @author: Cristian Moreno Zulauaga <khriztianmoreno@gmail.com>
  */
 
 const { Router } = require('express');
