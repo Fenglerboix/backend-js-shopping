@@ -41,7 +41,20 @@ function create(req, res) {
         .catch(validationError(res));
 }
 
+/**
+ * delete user
+ */
+function remove(req, res) {
+    User.findByIdAndRemove(req.params.id).exec()
+        .then(doc => {
+            if (!doc) { return res.status(404).end(); }
+            return res.status(204).end();
+        })
+        .catch(err => next(err))
+}
+
 module.exports = {
     index,
     create,
+    remove
 };

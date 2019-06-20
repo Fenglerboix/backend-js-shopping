@@ -48,13 +48,22 @@ function create(req, res) {
         .catch(handleError(res));
 }
 
-// Create product
+// Update product
 function update(req, res) {
     const id = req.params.id;
     const updateObject = req.body;
     return Product.updateOne({ _id: id }, { $set: updateObject }).exec()
         .then(respondWithResult(res))
         .catch(handleError(res));
+}
+
+function remove(req, res) {
+    Product.findByIdAndRemove(req.params.id).exec()
+        .then(doc => {
+            if (!doc) { return res.status(404).end(); }
+            return res.status(204).end();
+        })
+        .catch(err => next(err))
 }
 
 // Gets a single product from the DB
@@ -69,5 +78,6 @@ module.exports = {
     create,
     show,
     index,
-    update
+    update,
+    remove
 };
